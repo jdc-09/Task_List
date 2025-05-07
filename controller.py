@@ -1,23 +1,28 @@
-from model import *
-from view import *
+import model
+import view
 
 
 
 while True:
-    opcion = obtener_seleccion()
+    opcion = view.obtener_seleccion()
 
 
     if opcion==1 : 
-        nombre_tarea=obtener_tarea()
-        agregar_tarea(nombre_tarea)
+        nombre_tarea=view.obtener_tarea()
+        model.agregar_tarea(nombre_tarea)
         
     elif opcion==2:
-        todas_tareas=listar_tareas()
-        mostrar_tareas(todas_tareas)
+        todas_tareas=view.listar_tareas()
+        model.mostrar_tareas(todas_tareas)
 
     elif opcion==3:
-        indice=obtener_indice()
-        marcar_completada(indice)
+        indice=view.obtener_indice()
+        model.marcar_completada(indice)
+
+    elif opcion==4:
+        indice = view.obtener_indice()
+        model.eliminar_tarea(indice)
+    
         
 
     else: 
